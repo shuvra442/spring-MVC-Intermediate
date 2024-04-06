@@ -1,9 +1,15 @@
-package config;
+package DoingSomething.config;
 
-import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class MvcIntializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    /**
+     * Approach::->> 2
+     *
+     * This a second approach and standard approach MVC annotation based....
+     *
+     */
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
@@ -12,13 +18,11 @@ public class MvcIntializer extends AbstractAnnotationConfigDispatcherServletInit
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        Class []rrr
-        return new Class[0];
+        return new Class[]{ViewResolverInitialize.class};
     }
 
     @Override
     protected String[] getServletMappings() {
-        String arr[]={"/alien/*"};
-        return arr;
+        return new String[]{"/alien/*"};
     }
 }
